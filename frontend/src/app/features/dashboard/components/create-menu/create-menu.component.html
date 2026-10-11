@@ -1,0 +1,75 @@
+<div class="create-menu">
+  @if (isOpen()) {
+    <div class="create-menu__backdrop" aria-hidden="true" (click)="close()"></div>
+    <div
+      id="create-menu-options"
+      class="create-menu__panel"
+      role="menu"
+      aria-label="Create or upload"
+    >
+      <button type="button" role="menuitem" (click)="onCreateFolder()">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+        </svg>
+        New folder
+      </button>
+      <button type="button" role="menuitem" (click)="filePicker.click()">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M12 16V3m0 0L8 7m4-4 4 4M5 15v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4" />
+        </svg>
+        File upload
+      </button>
+      <button type="button" role="menuitem" (click)="folderPicker.click()">
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path d="M12 16V3m0 0L8 7m4-4 4 4M5 15v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4" />
+        </svg>
+        Folder upload
+      </button>
+    </div>
+  }
+
+  <input
+    #filePicker
+    class="visually-hidden"
+    type="file"
+    aria-label="Choose a file to upload"
+    (change)="onUploadFile($event)"
+  />
+  <input
+    #folderPicker
+    class="visually-hidden"
+    type="file"
+    aria-label="Choose a folder to upload"
+    webkitdirectory
+    (change)="close()"
+  />
+
+  <button
+    type="button"
+    class="create-menu__trigger"
+    [attr.aria-expanded]="isOpen()"
+    aria-controls="create-menu-options"
+    (click)="toggle()"
+  >
+    <span aria-hidden="true">+</span>
+    New
+  </button>
+</div>

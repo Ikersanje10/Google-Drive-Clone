@@ -1,0 +1,19 @@
+<div class="createFolderModal-shell">
+  <div class="container">
+    <h3>Create Folder</h3>
+    <form (submit)="onSubmit($event)">
+      <label for="folderName">Folder name</label>
+      <input
+        id="folderName"
+        name="folderName"
+        type="text"
+        placeholder="Folder name"
+        [formControl]="folderName"
+      />
+      <div class="buttonsContainer">
+        <button type="button" id="cancelButton" (click)="closeModal.emit()">Cancel</button>
+        <button type="submit" id="submitButton">Create</button>
+      </div>
+    </form>
+  </div>
+</div>

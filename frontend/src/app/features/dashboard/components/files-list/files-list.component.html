@@ -1,0 +1,14 @@
+<div class="files-shell">
+  <header>
+    <h3>Files</h3>
+  </header>
+  <main class="filesList">
+    @if ((filesList() ?? []).length > 0) {
+      @for (file of filesList() ?? []; track file.id) {
+        <app-file-item [file]="file" />
+      }
+    } @else {
+      <app-app-empty-state [title]="'There are not files'" [icon]="'🗎'"></app-app-empty-state>
+    }
+  </main>
+</div>

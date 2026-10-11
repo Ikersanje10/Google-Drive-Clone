@@ -1,0 +1,44 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.file {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 5px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid var(--whiteGrey);
+  padding: 10px;
+  width: 100%;
+}
+
+.fileInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.fileData {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+}
+
+.fileName {
+  font-size: 0.9em;
+}
+
+.fileProperties {
+  font-size: 0.8em;
+}
+
+.fileOptions {
+  background-color: transparent;
+  border: none;
+}

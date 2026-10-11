@@ -1,0 +1,11 @@
+@if (folderContent().length === 0) {
+  <app-app-empty-state [title]="'There are not folder neither files'"></app-app-empty-state>
+}
+
+@for (driveItem of folderContent(); track driveItem.id ?? driveItem.name) {
+  @if (driveItem.type === 'FOLDER') {
+    <app-folder-item [folder]="driveItem"></app-folder-item>
+  } @else {
+    <app-file-item [file]="driveItem"></app-file-item>
+  }
+}

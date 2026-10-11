@@ -1,0 +1,88 @@
+:host {
+  flex: 1;
+  display: flex;
+  height: 100%;
+}
+
+.my-drive-home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  height: 100%;
+
+  header h2 {
+    font-weight: 600;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 100%;
+
+    .foldersContainer {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      height: 25%;
+      max-height: 25%;
+      overflow-y: scroll;
+
+      .folderList {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 30px;
+
+        .folder {
+          display: flex;
+          align-items: center;
+          column-gap: 10px;
+          padding: 15px 10px;
+          border-radius: 10px;
+          border: 1px solid var(--mainScreenBackgroundDark);
+          background-color: white;
+
+          svg {
+            color: var(--mainPurpleColor);
+          }
+        }
+      }
+    }
+
+    .filesContainer {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      overflow-y: scroll;
+      height: 75%;
+
+      .filesList {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+        max-height: 400px;
+        overflow-y: scroll;
+
+        .file {
+          display: flex;
+          align-items: center;
+          column-gap: 10px;
+          padding: 15px 10px;
+          border-radius: 10px;
+          border: 1px solid var(--mainScreenBackgroundDark);
+          background-color: white;
+
+          svg {
+            color: var(--mainPurpleColor);
+          }
+        }
+      }
+    }
+  }
+}
+
+h3 {
+  font-size: 0.8em;
+  color: var(--whiteGrey);
+}

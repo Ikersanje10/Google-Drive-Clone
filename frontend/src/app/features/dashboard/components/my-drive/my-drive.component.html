@@ -1,0 +1,29 @@
+<section class="myDrive-shell">
+  <header class="breadcrumb">
+    <nav aria-label="Current folder path">
+      <ol class="breadcrumb__list">
+        @for (item of breadcrumb.items(); track item.url; let isLast = $last) {
+          <li class="breadcrumb__item" [class.breadcrumb__item--current]="isLast">
+            @if (isLast) {
+              <span class="breadcrumb__current" aria-current="page" [title]="item.label">
+                {{ item.label }}
+              </span>
+            } @else {
+              <button
+                type="button"
+                class="breadcrumb__link"
+                [routerLink]="item.url"
+                [title]="item.label"
+              >
+                {{ item.label }}
+              </button>
+              <span class="breadcrumb__separator" aria-hidden="true">›</span>
+            }
+          </li>
+        }
+      </ol>
+    </nav>
+  </header>
+
+  <router-outlet></router-outlet>
+</section>

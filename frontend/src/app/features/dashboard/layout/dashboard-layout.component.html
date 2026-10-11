@@ -1,0 +1,22 @@
+<div class="dashboard-shell">
+  <header>
+    <h1>Vaulty</h1>
+    <button (click)="toggleNavbar()">☰</button>
+  </header>
+  @if (isNavbarOpen()) {
+    <div class="navbar-backdrop" (click)="toggleNavbar()"></div>
+  }
+  <app-navbar
+    [isNavbarOpen]="isNavbarOpen()"
+    (closeNavbar)="toggleNavbar()"
+    (createFolder)="openCreateFolder()"
+  ></app-navbar>
+  <main>
+    @if (createFolderSignal()) {
+      <div class="navbar-backdrop"></div>
+      <app-create-folder-modal (closeModal)="closeCreateFolder()"></app-create-folder-modal>
+    }
+    <input type="text" id="searchFileInput" placeholder="Search Files" />
+    <router-outlet></router-outlet>
+  </main>
+</div>

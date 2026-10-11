@@ -1,0 +1,69 @@
+.auth-shell{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mainScreenBackground);
+}
+
+.appInitialDescription{
+    background-color: var(--mainPurpleColor);
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+h1{
+    font-size: 1.1em;
+    color: white;
+    font-weight: 600;
+    position: relative;
+    padding-left: 25px;
+    margin-top: 20px;
+}
+
+h1::before{
+    content: '';
+    position: absolute;
+    background-color: var(--mainOrangeColor);
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    left: 0px;
+}
+
+#shortDescription{
+    color: var(--whiteSmoke);
+    font-weight: 200;
+}
+
+#largeDescription{
+    display: none;
+    color: var(--whiteSmoke);
+}
+
+.auth-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 1024px){
+    .auth-shell{
+        flex-direction: row;
+    }
+
+    .appInitialDescription{
+        max-width: 40%;
+        justify-content: center;
+    }
+
+    #shortDescription{
+        font-weight: bold;
+        font-size: 2em;
+    }
+
+    #largeDescription{
+        display: block;
+    }   
+}

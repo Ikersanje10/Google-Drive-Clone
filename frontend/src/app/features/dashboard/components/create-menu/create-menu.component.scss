@@ -1,0 +1,94 @@
+:host {
+  display: block;
+}
+
+.create-menu {
+  position: relative;
+}
+
+.create-menu__backdrop {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+}
+
+.create-menu__trigger {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-height: 2.75rem;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.625rem 0.75rem;
+  background-color: var(--mainPurpleColor);
+  color: var(--whiteSmoke);
+  font: inherit;
+  font-size: 0.9em;
+  cursor: pointer;
+
+  span {
+    font-size: 1.35rem;
+    font-weight: 300;
+    line-height: 1;
+  }
+}
+
+.create-menu__panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 0.75rem);
+  z-index: 2;
+  display: grid;
+  min-width: 15rem;
+  padding: 0.45rem;
+  border: 1px solid #e5e1da;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgb(20 20 20 / 15%);
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-height: 2.75rem;
+    border: 0;
+    border-radius: 9px;
+    padding: 0.5rem 0.7rem;
+    background: transparent;
+    color: #1f1b2d;
+    font: inherit;
+    font-size: 0.95rem;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--mainPurpleLightestColor);
+    }
+  }
+
+  svg {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex: 0 0 auto;
+  }
+}
+
+button:focus-visible {
+  outline: 3px solid #5c4eb9;
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}

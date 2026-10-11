@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-size: 1em;
+  color: var(--whiteGrey);
+}

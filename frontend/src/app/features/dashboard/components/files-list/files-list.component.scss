@@ -1,0 +1,11 @@
+.files-shell {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.filesList {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 10px;
+}

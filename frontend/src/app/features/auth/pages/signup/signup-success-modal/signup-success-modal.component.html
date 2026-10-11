@@ -1,0 +1,23 @@
+@if (visible()) {
+<div class="modal-backdrop">
+  <div class="modal-card">
+    <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M54.0834 27.2383V29.5C54.0804 34.8012 52.3638 39.9594 49.1897 44.2053C46.0156 48.4512 41.554 51.5573 36.4703 53.0604C31.3867 54.5635 25.9533 54.383 20.9807 52.5458C16.008 50.7087 11.7624 47.3133 8.87703 42.8661C5.99169 38.4189 4.62123 33.1582 4.97004 27.8684C5.31884 22.5787 7.36821 17.5435 10.8125 13.5136C14.2568 9.4838 18.9115 6.67531 24.0824 5.50702C29.2532 4.33873 34.6632 4.87324 39.5055 7.03083M54.0834 9.83333L29.5001 34.4412L22.1251 27.0662"
+        stroke="#009951"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    <h2>Account created</h2>
+    <p>Your account has been created. Sign in now or set up another one.</p>
+    <div class="actions">
+      <button class="btn-primary" (click)="goToLogin.emit()">Go to login</button>
+      <button class="btn-secondary" (click)="createAnotherAccount.emit()">
+        Create another account
+      </button>
+    </div>
+  </div>
+</div>
+}

@@ -1,0 +1,95 @@
+:host {
+  display: block;
+}
+
+.navbar-shell {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  padding: 10px;
+  position: fixed;
+  inset: 0 0 auto auto;
+  z-index: 10;
+
+  width: min(70vw, 20rem);
+  height: 100dvh;
+  background-color: var(--mainScreenBackground);
+
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+}
+
+.navbar-shell.is-open {
+  transform: translateX(0);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+
+  .userInfoContainer {
+    display: flex;
+    column-gap: 10px;
+
+    img {
+      border-radius: 50%;
+    }
+
+    .detailedInfo {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-size: 0.7em;
+        color: black;
+      }
+
+      span:last-of-type {
+        color: var(--whiteGrey);
+      }
+    }
+  }
+
+  #closeNavbarButton {
+    background-color: transparent;
+    border: none;
+    font-size: 0.8em;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  .sectionButton {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .sectionButton.current {
+    color: var(--mainPurpleColor);
+    background-color: var(--mainPurpleLightestColor);
+  }
+
+  #logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    border-radius: 10px;
+    background-color: var(--lightRed);
+    color: red;
+    border: none;
+    padding: 10px;
+    font-size: 0.9em;
+  }
+}

@@ -1,0 +1,127 @@
+@use '@angular/material' as mat;
+
+:host {
+  flex: 1;
+  view-transition-name: auth-form;
+}
+
+.loginSection {
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 20px;
+}
+
+header {
+  margin-top: 10px;
+
+  h2 {
+    font-weight: 500;
+  }
+
+  p {
+    margin-top: 20px;
+    color: var(--whiteGrey);
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 0.8em;
+    color: var(--whiteGrey);
+  }
+
+  label[for='password'] {
+    margin-top: 20px;
+  }
+
+  input {
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--whiteSmoke);
+    height: 40px;
+    padding: 10px;
+  }
+  input:focus {
+    outline: 1px solid var(--whiteGrey);
+  }
+
+  button {
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+  }
+
+  a{
+    background-color: red;
+  }
+
+  #signinButton {
+    background-color: var(--mainPurpleColor);
+    color: var(--whiteSmoke);
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include mat.progress-spinner-overrides(
+    (
+      active-indicator-color: var(--whiteSmoke),
+    )
+  );
+
+  .divider {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+  }
+
+  .divider::before,
+  .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--whiteSmoke);
+  }
+
+  .divider span {
+    font-size: 13px;
+    color: var(--whiteGrey);
+  }
+
+  #googleAuthenticationButton {
+    background-color: white;
+    border: 1px solid var(--whiteGrey);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  p {
+    color: var(--whiteGrey);
+  }
+  a {
+    text-decoration: none;
+    color: var(--mainPurpleColor);
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1024px) {
+  form .divider {
+    display: flex;
+  }
+}

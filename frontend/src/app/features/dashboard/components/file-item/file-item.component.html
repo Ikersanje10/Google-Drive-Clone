@@ -1,0 +1,41 @@
+<div class="file">
+  <div class="fileInfo">
+    <svg
+      width="25px"
+      height="25px"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <rect width="25" height="25" />
+      <path
+        d="M13 3L16 6L19 9M13 3L5 3L5 21L19 21L19 9M13 3L13 9L19 9"
+        stroke="#000000"
+        stroke-linejoin="round"
+      />
+    </svg>
+    <div class="fileData">
+      <span class="fileName">{{ file().name }}</span>
+      <span class="fileProperties"
+        >{{ file().sizeBytes | number: '1.0-0' }}B ·
+        {{ file().updatedAt | date: 'MMM d' }}</span
+      >
+    </div>
+  </div>
+  <button class="fileOptions" type="button" aria-label="File options">
+    <svg
+      fill="#000000"
+      xmlns="http://www.w3.org/2000/svg"
+      width="15px"
+      height="15px"
+      viewBox="0 0 52 52"
+      aria-hidden="true"
+    >
+      <path
+        d="M20,44c0-3.3,2.7-6,6-6s6,2.7,6,6s-2.7,6-6,6S20,47.3,20,44z M20,26c0-3.3,2.7-6,6-6s6,2.7,6,6s-2.7,6-6,6
+    S20,29.3,20,26z M20,8c0-3.3,2.7-6,6-6s6,2.7,6,6s-2.7,6-6,6S20,11.3,20,8z"
+      />
+    </svg>
+  </button>
+</div>

@@ -1,0 +1,17 @@
+.folder-shell {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.folderList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 20px;
+  row-gap: 10px;
+  width: 100%;
+
+  app-app-empty-state {
+    grid-column: 1 / -1;
+  }
+}

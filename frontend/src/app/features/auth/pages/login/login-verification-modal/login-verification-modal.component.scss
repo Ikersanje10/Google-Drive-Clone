@@ -1,0 +1,99 @@
+@use '@angular/material' as mat;
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); // dark overlay behind the modal
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-card {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 300px;
+  background: var(--mainScreenBackground);
+  border-radius: 16px;
+  padding: 2rem 1.75rem 1.75rem;
+  border: 3px solid var(--mainPurpleColor);
+
+  h2 {
+    color: var(--whiteGrey);
+  }
+
+  p {
+    color: var(--whiteGrey);
+  }
+
+  form {
+    .inputList {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: row;
+      column-gap: 15px;
+
+      input {
+        width: calc(100% / 6);
+        font-size: 1.1em;
+        height: 40px;
+        border-radius: 10px;
+        border: 1px solid var(--whiteGrey);
+        text-align: center;
+      }
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  #verifyOtpButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--mainPurpleColor);
+    color: var(--whiteSmoke);
+  }
+
+  #verifyOtpButton:disabled {
+    background-color: var(--mainPurpleLightColor);
+  }
+
+  @include mat.progress-spinner-overrides(
+    (
+      active-indicator-color: var(--whiteSmoke),
+    )
+  );
+
+  .error-message {
+    font-size: 0.8em;
+    color: red;
+    text-align: center;
+  }
+
+  div {
+    text-align: center;
+    color: var(--whiteGrey);
+
+    button {
+      background-color: none;
+      border: none;
+      cursor: pointer;
+      color: black;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal-card {
+    left: calc(40% + 60% / 2 - 150px);
+  }
+}

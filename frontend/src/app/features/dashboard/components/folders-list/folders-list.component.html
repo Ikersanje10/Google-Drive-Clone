@@ -1,0 +1,12 @@
+<div class="folder-shell">
+  <h3>Folders</h3>
+  <div class="folderList">
+    @if ((folderList() ?? []).length > 0) {
+      @for (folder of folderList() ?? []; track folder.id) {
+        <app-folder-item [folder]="folder" />
+      }
+    } @else {
+      <app-app-empty-state [icon]="'📂'" [title]="'There are not folders'"></app-app-empty-state>
+    }
+  </div>
+</div>

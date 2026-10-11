@@ -1,0 +1,53 @@
+.createFolderModal-shell {
+  z-index: 20;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: var(--mainScreenBackgroundDark);
+      color: var(--whiteGrey);
+      font-size: 0.9em;
+    }
+  }
+
+  .buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+
+    button {
+      padding: 7px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #cancelButton {
+      width: 40%;
+    }
+
+    #submitButton {
+      width: 60%;
+    }
+  }
+}

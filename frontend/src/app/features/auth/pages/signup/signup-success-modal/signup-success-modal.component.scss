@@ -1,0 +1,60 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); // dark overlay behind the modal
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-card {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  width: 300px;
+  background: var(--mainScreenBackground);
+  border-radius: 16px;
+  padding: 2rem 1.75rem 1.75rem;
+  text-align: center;
+  border: 3px solid var(--mainPurpleColor);
+
+  h2 {
+    color: var(--whiteGrey);
+  }
+
+  p {
+    color: var(--whiteGrey);
+  }
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 100%;
+  button {
+    border: none;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .btn-primary {
+    background-color: var(--mainPurpleColor);
+    color: var(--whiteSmoke);
+  }
+
+  .btn-secondary {
+    background-color: white;
+    border: 1px solid var(--whiteGrey);
+  }
+}
+
+@media (min-width: 1024px) {
+  .modal-card {
+    left: calc(40% + 60% / 2 - 150px);
+  }
+}

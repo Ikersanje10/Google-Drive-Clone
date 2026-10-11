@@ -1,1 +1,96 @@
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root {
+  --mainPurpleColor: #5b47e0;
+  --mainPurpleLightColor: rgb(91, 71, 224, 0.7);
+  --mainPurpleLightestColor: rgb(91, 71, 224, 0.1);
+  --mainOrangeColor: #ff6b4a;
+  --mainScreenBackground: #faf9f6;
+  --mainScreenBackgroundDark: #e0e0e0;
+  --whiteGrey: #6b6577;
+  --whiteSmoke: #efedfc;
+  --lightRed: #fdadad;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter';
+}
+
+html,
+body {
+  height: 100%;
+}
+
+app-root {
+  display: block;
+  height: 100%;
+}
+
+::view-transition-old(auth-form) {
+  animation:
+    fade-out 0.2s ease both,
+    slide-top 0.5s ease both;
+}
+
+::view-transition-new(auth-form) {
+  animation:
+    fade-in 0.4s ease both,
+    slide-from-down-to-top 0.9s ease both;
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-top {
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes slide-from-down-to-top {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slide-down-fade-out {
+  to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes slide-top-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
